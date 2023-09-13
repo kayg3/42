@@ -16,19 +16,22 @@ void	*ft_memmove(void *des, const void *src, size_t n)
 {
 	size_t	i;
 
-	i = 0;
-	if (((unsigned char *)des) >= ((unsigned char *)src))
+	if (!des || !src)
+		return (NULL);
+	if (des > src)
 	{
-		while (i < n)
+		i = (int) n - 1;
+		while (i >= 0)
 		{
-			((unsigned char *)des)[i] = ((unsigned char *)src)[i];
-			i++;
+			*(char *)(des + i) = *(char *)(src + i);
+			i--;
 		}
 	}
 	else
 	{
-		while (n-- > 0)
-			((unsigned char *)des)[n] = ((unsigned char *)src)[n];
+		while (i < (int)n)
+			*(char *)(des + i) = *(char *)(src + i);
+			i--;
 	}
 	return (des);
 }
