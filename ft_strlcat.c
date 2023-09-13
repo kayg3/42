@@ -17,18 +17,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	size_t	i;
 	size_t	j;
 
-	j = 0;
 	i = 0;
-	while (dst[i])
-		i++;
-	while (src[j] && (i + j < n - 1))
+	while (*dst && i < n)
 	{
-		dst[i + j] = src[j];
-		j++;
+		dst++;
+		i++;
 	}
-	dst[i + j] = '\0';
-	while (src[j])
-		j++;
+	j = ft_strlcpy(dst, src, n - i);
 	return (i + j);
 }
 /*
