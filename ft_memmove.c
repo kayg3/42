@@ -23,7 +23,7 @@ void	*ft_memmove(void *des, const void *src, size_t n)
 	{
 		src += n;
 		des += n;
-		while (l--)
+		while (n--)
 			*(char *)--des = *(char *)--src;
 	}
 	else
