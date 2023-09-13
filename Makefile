@@ -20,9 +20,9 @@ SOURCE = \
 		ft_isalpha.c  ft_memmove.c     ft_strdup.c	ft_strnstr.c \
 		ft_isascii.c  ft_memset.c      ft_striteri.c	ft_strrchr.c \
 		ft_isdigit.c  ft_putchar_fd.c  ft_strjoin.c	ft_strtrim.c \
-OBJECTS = $(SOURCE:.c=.o)
+OBJECTS = $(SOURCE:.c=.o)		
 
-CC = cc
+CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
