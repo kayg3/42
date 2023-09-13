@@ -21,14 +21,14 @@ void	*ft_memmove(void *des, const void *src, size_t n)
 	str = des;
 	if (des > src)
 	{
-		src += len;
-		des += len;
-		while (len--)
+		src += n;
+		des += n;
+		while (l--)
 			*(char *)--des = *(char *)--src;
 	}
 	else
 	{
-		while (len--)
+		while (n--)
 			*(char *)des++ = *(char *)src++;
 	}
 	return (str);
