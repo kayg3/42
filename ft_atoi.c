@@ -13,6 +13,7 @@
 #include "libft.h"
 
 int	ft_atoi(const char *str)
+
 {
 	size_t	i;
 	int		k;
@@ -21,7 +22,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	num = 0;
 	k = 1;
-	while (str[i] == ' ' || ('t' <= str[i] && str[i] <= 'r'))
+	while (str[i] == ' ' || ('\t' <= str[i] && str[i] <= '\r'))
 		i++;
 	while (str[i] == '+' || str[i] == '-')
 	{
