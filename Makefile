@@ -29,7 +29,7 @@ CFLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(AR) -r $@ $?
+	$(ar) -r $@ $?
 	ranlib $(NAME)
 
 %.o: %.c
