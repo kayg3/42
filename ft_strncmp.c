@@ -17,15 +17,15 @@ int	ft_strncmp(const char *str1, const char *str2, size_t num)
 	size_t	i;
 
 	i = 0;
-	while (*str1 && *str2 && (i <= num))
+	while (*str1 && *str2 && (i < num))
 	{
 		if (str1[i] != str2[i])
-			return (*(unsigned char *)str1[i] - *(unsigned char *)str2[i]);
+			return (*(unsigned char *)str1 - *(unsigned char *)str2);
 		i++;
 	}
 	if (i == num)
-		i--;
-	return (*(unsigned char *)str1[i] - *(unsigned char *)str2[i];
+		return 0;
+	return (*(unsigned char *)str1 - *(unsigned char *)str2;
 }
 /*
 int	main(void)
