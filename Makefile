@@ -9,10 +9,11 @@
 #    Updated: 2023/09/13 18:28:38 by jkozmus          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME = libft.a
 
-# List of source files
-SOURCE = ft_isprint.c ft_putendl_fd.c ft_strlcat.c ft_substr.c \
+CC = 		cc
+CFLAGS = 	-Wall -Werror -Wextra
+
+SRC = ft_isprint.c ft_putendl_fd.c ft_strlcat.c ft_substr.c \
          ft_atoi.c ft_itoa.c ft_putnbr_fd.c ft_strlcpy.c ft_tolower.c \
          ft_bzero.c ft_memchr.c ft_putstr_fd.c ft_strlen.c ft_toupper.c \
          ft_calloc.c ft_memcmp.c ft_split.c ft_strmapi.c \
@@ -21,26 +22,25 @@ SOURCE = ft_isprint.c ft_putendl_fd.c ft_strlcat.c ft_substr.c \
          ft_isascii.c ft_memset.c ft_striteri.c ft_strrchr.c \
          ft_isdigit.c ft_putchar_fd.c ft_strjoin.c ft_strtrim.c
 
-OBJECTS = $(SOURCE:.c=.o)
+OBJ = 		$(SRC:.c=.o)
 
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+NAME = 		libft.a
 
-all: $(NAME)
+.PHONY: 	all clean fclean re
 
-$(NAME): $(OBJECTS)
-	$(ar) -r $@ $?
-	ranlib $(NAME)
-
-%.o: %.c
-	$(CC) -c $(CFLAGS) $?
+all: 		$(NAME)
 
 clean:
-	rm -f $(OBJECTS)
+			rm -f $(OBJ)
 
-fclean: clean
-	rm -f $(NAME)
+fclean: 	clean
+			rm -f $(NAME)
 
-re: fclean all
+re: 		fclean all
 
-.PHONY: all clean fclean re
+%.o: %.c
+			$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME):	$(OBJ)
+			ar -rc $(NAME) $(OBJ)
+			ranlib $(NAME)
