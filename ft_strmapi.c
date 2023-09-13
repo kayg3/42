@@ -6,7 +6,7 @@
 /*   By: jkozmus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 07:46:33 by jkozmus           #+#    #+#             */
-/*   Updated: 2023/09/13 07:50:24 by jkozmus          ###   ########.fr       */
+/*   Updated: 2023/09/13 19:40:45 by jkozmus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 	{
-		s[i] = f(i, s[i]);
+		c[i] = f(i, s[i]);
 		i++;
 	}
 	c[i] = 0;

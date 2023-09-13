@@ -6,7 +6,7 @@
 /*   By: jkozmus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:39:13 by jkozmus           #+#    #+#             */
-/*   Updated: 2023/09/13 06:40:32 by jkozmus          ###   ########.fr       */
+/*   Updated: 2023/09/13 19:38:47 by jkozmus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (s[i])
-		return(0);
+		return;
 	while (s[i])
 	{
 		f(i, &s[i]);

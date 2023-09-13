@@ -6,7 +6,7 @@
 /*   By: jkozmus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:19:53 by jkozmus           #+#    #+#             */
-/*   Updated: 2023/09/13 06:42:42 by jkozmus          ###   ########.fr       */
+/*   Updated: 2023/09/13 19:36:32 by jkozmus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
-	return (0);
 }
 /*
 int main(void)
