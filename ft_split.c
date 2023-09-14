@@ -47,17 +47,14 @@ char	**ft_split(char const *s, char c)
 		if (*s != c)
 		{
 			n = 0;
-			while (*s && *s != c)
-			{
+			while (*s && *s != c && n++)
 				s++;
-				n++;
-			}
-			ptr[k++] = ft_substr(*(s - n), 0, n);	
+			ptr[k++] = ft_substr(*(s - n), 0, n);
 		}
-		else 
+		else
 			s++;
 	}
-		return (ptr);
+	return (ptr);
 }
 
 /*
