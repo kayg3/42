@@ -17,8 +17,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	k;
 
-	if (!little && len == 0)
-		return (malloc (0));
+	if (!ft_strlen(little))
+		return ((char *)big);
+	if (!ft_strlen(big) || len < ft_strlen(little))
+		return(0)
 	i = 0;
 	while (big[i] && i < len)
 	{
