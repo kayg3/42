@@ -27,11 +27,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		if (i >= start && k < len)
 		{
-			str[j] = s[j];
+			str[k] = s[k];
 			j++;			
 		}
 		i++;
 	}
-	str[j] = 0;
+	str[k] = 0;
 	return (str);
 }
