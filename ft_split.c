@@ -11,22 +11,18 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <stdlib.h>
 
 size_t	number_of_words(char const *s, char c)
 {
 	size_t	i;
-	size_t	n;
 
-	n = 0;
 	i = 0;
-	while (s[n])
+	while (*s)
 	{
-		if (s[n] != c)
+		if (*s != c)
 			i++;
-			while (s[n] != c && s[n])
-				n++;
+			while (*s != c && *s)
+				s++;
 		else
 			n++;
 	}
