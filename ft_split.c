@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 	ptr[n] = 0;
 	return (ptr);
 }
-
+/*
 int	main(void)
 {
 	char	*s = "__5sdfds_1_4assda_123_45___da"; 
@@ -92,4 +92,4 @@ int	main(void)
 		i++;
 	}
 	return (0);
-}
+}*/
