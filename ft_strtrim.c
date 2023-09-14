@@ -37,8 +37,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (s1[start] && (in_set(s1[start], set)))
 		start++;
-	end = (ft_strlen(s1) - 1);
-	while (start < end && in_set(s1[end], set))
+	end = (ft_strlen(s1));
+	while (start < end && in_set(s1[end - 1], set))
 		end--;
 	str = ft_substr (&s1[start], 0, end - start);
 	return (str);
