@@ -23,8 +23,8 @@ size_t	ft_strlcpy(char *des, const char *src, size_t n)
 		i++;
 	}
 	if (i < n)
-		*des= 0;
-	while (src++)
+		*des = 0;
+	while (*src++)
 		i++;
 	return (i);
 }
