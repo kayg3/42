@@ -24,7 +24,6 @@ size_t	ft_strlcpy(char *des, const char *src, size_t n)
 	}
 	if (i < n)
 		des[i] = 0;
-	}
 	while (src[i])
 		i++;
 	return (i);
