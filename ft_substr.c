@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	k = 0;
-	str = malloc (sizeof(char) * (len + 1));
+	str =(char *) malloc (sizeof(*s) * (len + 1));
 	if (!str)
 		return (0);
 	while (s[i])
