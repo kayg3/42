@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
+include "libft.h"
 
 int	size_of_str(int i)
 {
@@ -28,7 +26,7 @@ int	size_of_str(int i)
 		if (i > 0)
 			i/= 10;
 		else
-			i /= -10;
+			i /= - 10;
 		n++;
 	}
 	return (n);
@@ -39,9 +37,8 @@ char	*ft_itoa(int n)
 	int		l;
 	char	*str;
 	
-	
 	l = size_of_str(n);
-	str = malloc (sizeof(char) * (l + 1));
+		str = malloc (sizeof(char) * (l + 1));
 	if (!str)
 		return (0);
 	str[l] = 0;
@@ -53,7 +50,7 @@ char	*ft_itoa(int n)
 	{
 		if (n > 0)
 			str[--l] = n % 10 + 48;
-		else 
+		else
 			str[--l] = n % 10 * -1 + 48;
 		n /= 10;
 	}
