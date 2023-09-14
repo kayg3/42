@@ -40,7 +40,7 @@ char	**ft_split(char const *s, char c)
 	ptr = malloc (sizeof(char *) * (number_of_words(s, c) + 1));
 	if (!ptr)
 		return (NULL);
-	ptr[number_of_words(s,c) + 1] = 0;
+	ptr[number_of_words(s, c) + 1] = 0;
 	k = 0;
 	while (*s)
 	{
@@ -52,13 +52,14 @@ char	**ft_split(char const *s, char c)
 				s++;
 				n++;
 			}
-			ptr[k++] = ft_substr(*(s-n), 0, n);	
+			ptr[k++] = ft_substr(*(s - n), 0, n);	
 		}
 		else 
 			s++;
 	}
-	return (ptr);
+		return (ptr);
 }
+
 /*
 int	main(void)
 {
