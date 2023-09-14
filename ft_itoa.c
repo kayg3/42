@@ -24,9 +24,9 @@ int	size_of_str(int i)
 	while (i)
 	{
 		if (i > 0)
-			i / = 10;
+			i /= 10;
 		else
-			i / = -10;
+			i /= -10;
 		n++;
 	}
 	return (n);

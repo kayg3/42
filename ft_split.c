@@ -14,7 +14,7 @@
 
 size_t	number_of_words(char const *s, char c)
 {
-	size_t 	i;
+	size_t	i;
 
 	while (*s)
 	{
@@ -24,9 +24,10 @@ size_t	number_of_words(char const *s, char c)
 			while (*s && s != c)
 				s++;
 		}
-		else 
+		else
 			s++;
 	}
+}
 
 char	**ft_split(char const *s, char c)
 {
