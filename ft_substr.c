@@ -21,10 +21,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (ft_strlen(s) < start)
 		len = 0;
 	if (ft_strlen(&s[start]) < len)
-		len = ft_strlen(&s[start]);
+		len = ft_strlen(s + start);
 	k = malloc (sizeof(char) * (len + 1));
 	if (!k)
 		return (0);
-	ft_strlcpy(k, &s[start], len + 1);
+	ft_strlcpy(k, s + start, len + 1);
 	return (k);
 }
