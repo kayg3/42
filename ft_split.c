@@ -17,22 +17,18 @@
 size_t	number_of_words(char const *s, char c)
 {
 	size_t	i;
-	int		w;
+	size_t	n;
 
-	w = 0;
+	n = 0;
 	i = 0;
-	while (*s)
+	while (s[n])
 	{
-		while (*s != c && *s)
-			if (w == 0)
-			{
-				i++;
-				w = 1;
-			}
-			s++;
+		if (s[n] != c)
+			i++;
+			while (s[n] != c && s[n])
+				n++;
 		else
-			s++;
-			w = 0;
+			n++;
 	}
 	return (i);
 }
