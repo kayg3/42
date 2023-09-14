@@ -37,8 +37,8 @@ char	**ft_split(char const *s, char c)
 	size_t	k;
 	char	**ptr;
 	
-	if (!s)
-		return(malloc(0));
+	if (!*s)
+		return(0);
 	ptr = ft_calloc((number_of_words(s, c) + 1), sizeof(char *));
 	k = 0;
 	while (*s)
@@ -58,27 +58,17 @@ char	**ft_split(char const *s, char c)
 	}
 	return (ptr);
 }
-
 /*
+
 int	main(void)
 {
-	char	*s = "__5sdfds_1_4assda_123_45___da"; 
-	char	c = '_';
+	char	*s = ""; 
+	char	c = 'z';
 	char 	**ptr;
 	size_t	i;
 	int k;
 
 	i = 0;
-	printf("\nString to split: %s\nTriming element: %c", s, c);  
-	printf("\nNumber of words:   %zu", number_of_words(s, c));
-	ptr = ft_split(s, c);
-	while (i <= number_of_words(s, c))
-	{
-		printf("\nSplit %zu:", i);
-		k = 0;
-		while (ptr[i][k])
-			printf("%c", ptr[i][k++]);
-		i++;
-	}
+		ptr = ft_split(s, c);
 	return (0);
 }*/
