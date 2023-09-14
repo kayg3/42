@@ -51,7 +51,7 @@ char	**ft_split(char const *s, char c)
 			n = 0;
 			while (*s && *s != c && n++)
 				s++;
-			ptr[k++] = ft_substr(char *)(s - n), 0, n);
+			ptr[k++] = ft_substr(((char *)(s - n)), 0, n);
 		}
 		else
 			s++;
