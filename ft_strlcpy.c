@@ -17,18 +17,18 @@ size_t	ft_strlcpy(char *des, const char *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (n == 0)
+	if ((unsigned int)n == 0)
 	{
 		while (src[i])
 			i++;
 		return (i);
 	}
-	while (src[i] && i < (n - 1))
+	while (src[i] && i < ((unsigned int)n - 1))
 	{
 		des[i] = src[i];
 		i++;
 	}
-	if (i < n)
+	if (i < (unsigned int)n)
 		des[i] = '\0';
 	while (src[i])
 		i++;
