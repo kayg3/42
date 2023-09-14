@@ -15,18 +15,22 @@
 size_t	number_of_words(char const *s, char c)
 {
 	size_t	i;
+	size_t	word;
 
+	word = 0;
 	i = 0;
 	while (*s)
 	{
-		if (*s != c && *s)
-			i++;
-			while (*s != c && *s)
-				s++;
-		else
-			s++;
+		if (*s == c)
+			i = 0;
+		if (i == 0 && *s != c)
+		{
+			word++;
+			i = 1;
+		}
+		s++;
 	}
-	return (i);
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
