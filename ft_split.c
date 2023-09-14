@@ -24,7 +24,7 @@ size_t	number_of_words(char const *s, char c)
 		if (*s != c)
 			i++;
 			if (*s && *s !=c)
-			s++;
+				s++;
 		else
 			s++;
 	}
