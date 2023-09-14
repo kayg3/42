@@ -14,29 +14,23 @@
 
 size_t	number_of_words(char const *s, char c)
 {
-	size_t	i;
-	size_t	word;
+	size_t 	i;
 
-	word = 0;
-	i = 0;
 	while (*s)
 	{
-		if (*s == c)
-			i = 0;
-		if (i == 0 && *s != c)
+		if (*s != c)
 		{
-			word++;
-			i = 1;
+			i++;
+			while (*s && s != c)
+				s++;
 		}
-		s++;
+		else 
+			s++;
 	}
-	return (word);
-}
 
 char	**ft_split(char const *s, char c)
 {
 	size_t	n;
-	size_t	i;
 	size_t	k;
 	char	**ptr;
 
@@ -45,25 +39,23 @@ char	**ft_split(char const *s, char c)
 	ptr = malloc (sizeof(char *) * (number_of_words(s, c) + 1));
 	if (!ptr)
 		return (NULL);
-
-	i = 0;
+	ptr[number_of_words(s,c) + 1] = 0;
 	k = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
 			n = 0;
-			while (s[i] && s[i] != c)
+			while (*s && *s != c)
 			{
-				i++;
+				s++;
 				n++;
 			}
-			ptr[k++] = ft_substr(&s[i-n], 0, n);	
+			ptr[k++] = ft_substr(*(s-n), 0, n);	
 		}
 		else 
-			i++;
+			s++;
 	}
-	ptr[n] = 0;
 	return (ptr);
 }
 /*

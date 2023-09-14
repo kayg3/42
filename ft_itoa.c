@@ -24,9 +24,9 @@ int	size_of_str(int i)
 	while (i)
 	{
 		if (i > 0)
-			i/= 10;
+			i / = 10;
 		else
-			i /= - 10;
+			i / = -10;
 		n++;
 	}
 	return (n);
@@ -36,9 +36,9 @@ char	*ft_itoa(int n)
 {
 	int		l;
 	char	*str;
-	
+
 	l = size_of_str(n);
-		str = malloc (sizeof(char) * (l + 1));
+	str = malloc (sizeof(char) * (l + 1));
 	if (!str)
 		return (0);
 	str[l] = 0;
