@@ -39,7 +39,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	ptr = ft_calloc((number_of_words(s, c) + 1), sizeof(char *);
+	ptr = ft_calloc((number_of_words(s, c) + 1), sizeof(char *));
 	k = 0;
 	while (*s)
 	{
