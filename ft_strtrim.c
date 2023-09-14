@@ -40,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = (ft_strlen(s1) - 1);
 	while (start < end && in_set(s1[end], set))
 		end--;
-	str = ft_substr (&str[start], 0, end - start);
+	str = ft_substr (&s1[start], 0, end - start);
 	return (str);
 }
 /*
