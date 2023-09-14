@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (!ft_strlen(little))
 		return ((char *)big);
 	if (!ft_strlen(big) || len < ft_strlen(little))
-		return(0)
+		return (0);
 	i = 0;
 	while (big[i] && i < len)
 	{
