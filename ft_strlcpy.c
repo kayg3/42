@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *des, const char *src, size_t n)
 {
 	size_t	i;
-
+	write(0, "\n!", 2);
 	i = 0;
 	if ((unsigned int)n == 0)
 	{
@@ -23,13 +23,16 @@ size_t	ft_strlcpy(char *des, const char *src, size_t n)
 			i++;
 		return (i);
 	}
-	while (src[i] && i < ((unsigned int)n - 1))
+	write(0, "\n!2", 3);
+	while (src[i] && i + 1 < (unsigned int)n)
 	{
 		des[i] = src[i];
 		i++;
 	}
+	write(0, "\n!3", 3);
 	if (i < (unsigned int)n)
 		des[i] = '\0';
+	write(0, "\n!4", 3);
 	while (src[i])
 		i++;
 	return (i);
