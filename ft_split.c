@@ -39,7 +39,7 @@ char	**ft_split(char const *s, char c)
 
 	ptr = ft_calloc((number_of_words(s, c) + 1), sizeof(char *));
 	if (!ptr)
-		return (0);
+		return (NULL);
 	k = 0;
 	while (*s)
 	{
@@ -60,7 +60,6 @@ char	**ft_split(char const *s, char c)
 	return (ptr);
 }
 /*
-
 int	main(void)
 {
 	char	*s = ""; 
@@ -71,5 +70,6 @@ int	main(void)
 
 	i = 0;
 		ptr = ft_split(s, c);
+	free (ptr);
 	return (0);
 }*/

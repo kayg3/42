@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC = 		cc
-CFLAGS = 	-Wall -Werror -Wextra
+CFLAGS = 	-Wall -Werror -Wextra -I.
 
 SRC = ft_isprint.c ft_putendl_fd.c ft_strlcat.c ft_substr.c \
          ft_atoi.c ft_itoa.c ft_putnbr_fd.c ft_strlcpy.c ft_tolower.c \

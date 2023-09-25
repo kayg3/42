@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	size_of_str(int i)
+static int	size_of_str(int i)
 {
 	int	n;
 

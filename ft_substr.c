@@ -14,6 +14,33 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	size_t	i;
+	size_t	j;
+	char	*str;
+
+	if (ft_strlen(s) < start)
+		len = 0;
+	if (ft_strlen(s) <= len + start && len != 0)
+		len = ft_strlen(s) - (start);
+	str = (char *) malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (0);
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
+		i++;
+	}
+	str[j] = 0;
+	return (str);
+}
+/*
+{
 	char			*str;
 
 	if (!s)
@@ -25,10 +52,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str = (char *)malloc((len + 1) * (sizeof(char)));
 	if (!str)
 		return (0);
-	ft_strlcpy(str, &s[start], (len + 1));
+	else
+		ft_strlcpy(str, &s[start], (len + 1));
 	return (str);
 }
-/*
 int	main(void)
 {
 	const char	c[4]="hola";
