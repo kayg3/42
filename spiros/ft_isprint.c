@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkozmus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 13:39:33 by jkozmus           #+#    #+#             */
-/*   Updated: 2023/09/13 06:45:32 by jkozmus          ###   ########.fr       */
+/*   Created: 2023/09/04 14:53:32 by jkozmus           #+#    #+#             */
+/*   Updated: 2023/09/13 06:41:54 by jkozmus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t n, size_t size)
+int	ft_isprint(int c)
 {
-	void	*ptr;
-
-	/*if (!n)
-		return (malloc(0));*/
-	ptr = (void *)malloc (n * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, n * size);
-	return (ptr);
+	if (32 <= c && c < 127)
+		return (1);
+	return (0);
 }
+/*
+int main (void)
+{
+	if (ft_isascii('!') == 1)
+	{
+		write(1, "YES", 3);
+		return (0);
+	}
+	else 
+		return (0);
+}*/	

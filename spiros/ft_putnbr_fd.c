@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkozmus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 13:39:33 by jkozmus           #+#    #+#             */
-/*   Updated: 2023/09/13 06:45:32 by jkozmus          ###   ########.fr       */
+/*   Created: 2023/09/13 07:51:53 by jkozmus           #+#    #+#             */
+/*   Updated: 2023/09/13 08:15:33 by jkozmus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t n, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	void	*ptr;
+	int	i;
 
-	/*if (!n)
-		return (malloc(0));*/
-	ptr = (void *)malloc (n * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, n * size);
-	return (ptr);
+	i = 1;
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		i = -1;
+	}
+	if (n / 10)
+		ft_putnbr_fd(n / 10 * i, fd);
+	ft_putchar_fd((n % 10 * i + 48), fd);
 }
+/*
+int	main(void)
+{
+	int	i = -2147483648;
+	int fd = 2;
+
+	printf("\nBASE NUMBER: %d\n", i);
+	ft_putnbr_fd(i, fd);
+	return (0);
+}*/

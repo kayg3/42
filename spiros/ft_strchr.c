@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkozmus <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 13:39:33 by jkozmus           #+#    #+#             */
-/*   Updated: 2023/09/13 06:45:32 by jkozmus          ###   ########.fr       */
+/*   Created: 2023/09/07 19:52:40 by jkozmus           #+#    #+#             */
+/*   Updated: 2023/09/13 06:43:57 by jkozmus          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t n, size_t size)
+char	*ft_strchr(const char *str, int c)
 {
-	void	*ptr;
-
-	/*if (!n)
-		return (malloc(0));*/
-	ptr = (void *)malloc (n * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, n * size);
-	return (ptr);
+	while (*str)
+	{
+		if (*str == (unsigned char)c)
+			return ((char *)str);
+		str++;
+	}
+	if (!(unsigned char)c)
+		return ((char *)str);
+	return (NULL);
 }
+/*
+int main(void)
+{
+	char	str[20] = "a1b2c3d4e5f6g7h8i";
+	int	i;
+
+	i = '7';
+	printf("\n SRC string: %s\nSearching for: %d", str, i);
+	printf("\n Pointer to location in the string:\n%s", ft_strchr(str, i));
+	return (0);
+}*/
